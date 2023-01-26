@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+       {% block body %}
+        <!-- Page Header-->
+        <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Pannel</h1>
+                            <span class="subheading">Manage you posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+<h1>Basic Actions</h1>
+<a href="/dashboard"><button class="btn btn-primary text-uppercase">Dashboard Home</button></a>
+<a href="/logout"><button class="btn btn-primary text-uppercase">Logout</button></a>
+<hr>
+
+<h2>Add/edit post</h2>
+
+       <form id="contactForm" action ="/edit/{{srno}}" method="post" >
+                                <div class="form-floating">
+                                    <input class="form-control" id="Title" name="Title" type="text" placeholder="Enter your name..." data-sb-validations="required" value="{{post.title}}" />
+                                    <label for="name">Title</label>
+                                    <div class="invalid-feedback" >A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="Subtitle" name="Subtitle" type="text" placeholder="Enter your email..." data-sb-validations="required,email" value="{{post.subtitle}}" />
+                                    <label for="email">Subtitle</label>
+                                    <!-- <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div> -->
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="Slug" name="Slug" type="text" placeholder="Enter your phone number..." data-sb-validations="required" value="{{post.slug}}" />
+                                    <label for="phone">Slug</label>
+                                    <!-- <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div> -->
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="content" name="content" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required" >{{post.content}}</textarea>
+                                    <label for="message">Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                </div>
+                                 <div class="form-floating">
+                                    <input class="form-control" id="img_file" name="img_file" type="text" placeholder="Enter your phone number..." data-sb-validations="required" value="{{post.img_file}}" />
+                                    <label for="phone">img_file</label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                </div>
+                                <br />
+                                
+                                <input type="submit"  value="Send" class="btn btn-primary text-uppercase">
+                                
+                            </form>
+                    <!-- <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div> -->
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>

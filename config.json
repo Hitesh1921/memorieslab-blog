@@ -1,0 +1,16 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "Local_url": "mysql+pymysql://root:@localhost/memorieslab",
+    "prod_url": "mysql+pymysql://root:@localhost/memorieslab",
+    "about_text": "\"Welcome to my blog, where you will find valuable insights and information on a wide range of topics. Whether you're interested in learning about the latest industry trends, discovering new technologies, or simply reading about my personal experiences, you'll find it all here.\n There are also some of important things which I learned after a hardship but you can take benefit by avoiding the same mistakes.We invite you to explore our site and discover the wealth of information that we have to offer. And if you're ever in need of a new perspective or have any ideas for future topics, we'd love to hear from you.\n\nThank you for choosing our blog as your go-to source for all things informative and interesting. Happy reading!\"",
+    "login_img": "me.jpg",
+    "no_of_post": "3",
+    "admin_user": "Hitesh_Kumar",
+    "admin_pass": "Kumar23@MB",
+    "upload_location": "C:\\Users\\MyLap\\PycharmProjects\\pythonProject\\Static\\assets\\img"
+  }
+
+
+}
